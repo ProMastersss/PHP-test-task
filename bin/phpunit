@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+docker-compose exec php_test /spool/services/code-session/vendor/bin/phpunit --config /spool/services/code-session --testdox "$@"

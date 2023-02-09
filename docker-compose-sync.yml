@@ -1,0 +1,10 @@
+version: '3.2'
+
+services:
+  php_test:
+    volumes:
+      - code-session-data-sync:/spool/services/code-session:nocopy
+
+volumes:
+  code-session-data-sync:
+    external: true

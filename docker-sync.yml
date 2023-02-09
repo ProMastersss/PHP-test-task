@@ -1,0 +1,15 @@
+version: "2"
+
+options:
+  compose-dev-file-path: 'docker-compose-sync.yaml' # Если хочется изменить дефолтный файл docker-compose-dev.yml
+  verbose: false
+syncs:
+  code-session-data-sync:  # Это надо заменить на любое уникальное имя
+    src: './'
+    host_disk_mount_mode: 'cached'
+    sync_userid: ${DOCKER_UID}
+    sync_excludes:
+      - '.git/logs'
+      - '.git/objects'
+      - '.git/refs'
+      - '.idea'

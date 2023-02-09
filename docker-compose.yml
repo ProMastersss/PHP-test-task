@@ -1,0 +1,16 @@
+version: '3'
+services:
+
+  php_test:
+    build:
+      context: .
+      dockerfile: ./deploy/Dockerfile
+      args:
+        - DOCKER_UID=${DOCKER_UID}
+    restart: unless-stopped
+    tty: true
+    env_file:
+      - .env
+      - .env.local
+    volumes:
+      - "${PROJECT_ROOT}:/spool/services/code-session:delegated"
